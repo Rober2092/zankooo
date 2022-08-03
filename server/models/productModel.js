@@ -1,32 +1,50 @@
-import mongoose from 'mongoose';
-const reviewSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true },
-    comment: { type: String, required: true },
-    rating: { type: Number, required: true },
-  },
-  {
-    timestamps: true,
-  }
-);
+const mongoose = require('mongoose');
+
 const productSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, unique: true },
-    seller: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
-    image: { type: String, required: true },
-    brand: { type: String, required: true },
-    category: { type: String, required: true },
-    description: { type: String, required: true },
-    price: { type: Number, required: true },
-    countInStock: { type: Number, required: true },
-    rating: { type: Number, required: true },
-    numReviews: { type: Number, required: true },
-    reviews: [reviewSchema],
-  },
-  {
-    timestamps: true,
-  }
+    {
+        name: { 
+            type: String, 
+            required: 'Name is required',
+            unique: true
+        }, 
+        image: {
+            type: String,
+            require: 'Image is required'
+        },
+        brand: { 
+            type: String, 
+            required: 'Brand is required'
+        }, 
+        category: {
+            type: String,
+            required: 'Category is required'
+        },
+        description: {
+            type: String,
+            required: 'Description is required'
+        },
+        price: { 
+            type: Number, 
+            required: 'Price is required'
+        }, 
+        countInStock: { 
+            type: Number, 
+            required: 'CountInStock is required'
+        }, 
+        rating: { 
+            type: Number, 
+            required: 'Rating is required'
+        }, 
+        numReviews: { 
+            type: Number, 
+            required: 'Number of Review is required'
+        }, 
+    }, 
+    {
+        timestamps: true
+    }
 );
+
 const Product = mongoose.model('Product', productSchema);
 
-export default Product;
+module.exports = Product;
