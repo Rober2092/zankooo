@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import OrderHistory from './pages/OrderHistory';
+import Nav from './components/Nav';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import ShopMens from './pages/ShopMens';
@@ -14,7 +18,24 @@ function App() {
         <Router>
           <div>
             <StoreProvider>
-              <Routes>
+              <Nav />
+            <Routes>
+              <Route 
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<Signup />} 
+              />
+              <Route 
+                path="/orderHistory" 
+                element={<OrderHistory />} 
+              />
                 <Route
                   path="/"
                   element={<Home />}
