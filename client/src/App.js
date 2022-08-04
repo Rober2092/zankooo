@@ -28,7 +28,7 @@ function App() {
                   element={<ShopWomens />}
                 />
                 <Route
-                  path="/product/:id"
+                  path="/products/:name"
                   element={<ProductDetail />}
                 />
               </Routes>
