@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProductList from '../ProductList';
 
 function SubCategoryMenu() {
+
+    const [currentProductList, setCurrentProductList] = useState()
     return (
         <main>
             <ul>
                 <li>
-                    <a>Tops</a>
+                    <button onClick={() => setCurrentProductList(<ProductList />)}>Tops</button>
                 </li>
                 <li>
-                    <a>Bottoms</a>
+                    <button>Bottoms</button>
                 </li>
                 <li>
-                    <a>Shoes</a>
+                    <button>Shoes</button>
                 </li>
                 <li>
-                    <a>Accessories</a>
+                    <button>Accessories</button>
                 </li>
             </ul>
+            {currentProductList && <ProductList />}
+            
 
         </main>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import products from '../../products.json'
+import { Link } from "react-router-dom";
 
 import Card from 'react-bootstrap/Card';
 
@@ -8,7 +9,9 @@ function ProductItemCard(props) {
     return (
   
         <Card style={{ width: '18rem' }}>
+            <Link to={`/products/`}>
           <Card.Img className='' alt={props.name} src={props.image} />
+          </Link>
           <Card.Body>
             <Card.Title>{props.name}</Card.Title>
             <Card.Text>
@@ -29,7 +32,7 @@ function ProductItemCard(props) {
     <>
     <div>
     </div>
-    <h1>Portfolio</h1>
+    <h1>Tops</h1>
   
       <Wrapper>
   
