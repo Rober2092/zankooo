@@ -6,16 +6,17 @@ import Card from 'react-bootstrap/Card';
 
 function ProductItemCard(props) {
 
+    
+
     return (
   
         <Card style={{ width: '18rem' }}>
-            <Link to={`/products/`}>
+            <Link to={`/products/${props.name}`}>
           <Card.Img className='' alt={props.name} src={props.image} />
           </Link>
           <Card.Body>
             <Card.Title>{props.name}</Card.Title>
             <Card.Text>
-              {props.description}
               {props.price}
             </Card.Text>
           </Card.Body>
@@ -36,12 +37,11 @@ function ProductItemCard(props) {
   
       <Wrapper>
   
-        {products.map((products, index) => (
+        {products.map((products) => (
           <ProductItemCard 
           name={products.name}
           key={products.id}
           image={products.image}
-          description={products.description}
           price={products.price}
           />
         ))}

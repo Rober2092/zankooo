@@ -1,41 +1,71 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import products from '../products.json'
+import ProductItem from '../components/ProductItem';
+
+function ProductDetailInfo(props) {
+    console.log(props)
+
+    return (
+        <>
+            <div className="container my-1">
+                <Link to="/">← Back to Products</Link>
+
+                <h2>{props.name}</h2>
+
+                <p>{props.description}</p>
+
+                <p>
+                    <strong>Price:</strong>${props.price}{' '}
+                    <button >Add to cart</button>
+                    <button
+                    //   disabled={!cart.find(p => p._id === currentItem._id)}
+                    //   onClick={removeFromCart}
+                    >
+                        Remove from Cart
+                    </button>
+                </p>
+                
+                <img
+                    src={props.image}
+                    alt={props.name}
+                />
+            </div>
+        </>
+    );
 
 
+}
+
+function Wrapper(props) {
+    return <div>{props.children}</div>;
+}
 
 function ProductDetail() {
 
+    return (
 
-//   return (
-//     <>
-//       {currentProduct ? (
-//         <div className="container my-1">
-//           <Link to="/">← Back to Products</Link>
+        <Wrapper>
 
-//           <h2>{currentProduct.name}</h2>
+            {products.map((products) => (
 
-//           <p>{currentProduct.description}</p>
+                <ProductDetailInfo
+                    name={products.name}
+                    key={products.id}
+                    image={products.image}
+                    price={products.price}
+                />
+            ))}
+        </Wrapper>
+    )
+};
 
-//           <p>
-//             <strong>Price:</strong>${currentProduct.price}{' '}
-//             <button onClick={addToCart}>Add to cart</button>
-//             <button
-//               disabled={!cart.find(p => p._id === currentProduct._id)}
-//               onClick={removeFromCart}
-//             >
-//               Remove from Cart
-//             </button>
-//           </p>
 
-//           <img
-//             src={`/images/${currentProduct.image}`}
-//             alt={currentProduct.name}
-//           />
-//         </div>
-//       ) : null}
-//       {loading ? <img src={spinner} alt="loading" /> : null}
-//       <Cart />
-//     </>
-//   );
-}
+
+
+
+
+
+
 
 export default ProductDetail;
