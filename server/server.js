@@ -1,54 +1,38 @@
-require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-const mongoose = require('mongoose');
-const userRouter = require('./routes/userRouter');
-const productRouter = require('./routes/productRouter');
-const orderRouter = require('./routes/orderRouter');
-const app = express();
 
-//db connect 
-// console.log(process.env.MONGODB_URI );
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/Zankooo', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-});
+const { typeDefs, resolvers } = require('./schemas');
+const { authMiddleware } = require('./utils/auth');
+const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
+const app = express();
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware
+});
 
-//use express middlewaree
-app.use(express.urlencoded({ extended: true }));
+server.applyMiddleware({ app });
+
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-//use serRouter
-app.use('/api/users', userRouter);
-app.use('/api/products', productRouter);
-app.use('/api/orders', orderRouter);
+// Serve up static assets
+app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
-
-//Paypal client ID from .env file. send back to front end
-app.get('/api/config/paypal', (req, res) => {
-    // console.log(process.env.PAYPAL_CLIENT_ID);
-    res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
-});
-
-
-
-//For heroku deployment - this block of codes will only run in production env
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
-    });
+  app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-//error handling middleware
-app.use((err, req, res, next) => {
-    res.status(500).send({message: err.message});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-//server 
-app.listen(PORT, () => {
-    console.log(`listening on PORT ${PORT}. http://localhost:${PORT}`);
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  });
 });
