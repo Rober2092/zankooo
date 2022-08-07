@@ -8,7 +8,7 @@ const ShopMens = () => {
       <main>
         <h2>Shop Mens</h2>
         <MensSubcategoryMenu />
-            <SubCategoryMenu />
+
            
         
       </main>

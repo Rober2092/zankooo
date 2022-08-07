@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_MENSSUBCATEGORIES } from '../../utils/actions';
-import { QUERY_MENSSUBCATEGORIES } from '../../utils/queries';
+import { UPDATE_WOMENSSUBCATEGORIES } from '../../utils/actions';
+import { QUERY_WOMENSSUBCATEGORIES } from '../../utils/queries';
 
 
 
 
-function MensSubcategoryMenu() {
+function WomensSubcategoryMenu() {
     const [state, dispatch] = useStoreContext();
 
-const { menssubcategories } = state;
+const { womenssubcategories } = state;
 
-const { data: mensSubcategoryData } = useQuery(QUERY_MENSSUBCATEGORIES);
+const { data: womensSubcategoryData } = useQuery(QUERY_WOMENSSUBCATEGORIES);
 
 useEffect(() => {
     // if categoryData exists or has changed from the response of useQuery, then run dispatch()
-    if (mensSubcategoryData) {
+    if (womensSubcategoryData) {
       // execute our dispatch function with our action object indicating the type of action and the data to set our state for categories to
       dispatch({
-        type: UPDATE_MENSSUBCATEGORIES,
-        menssubcategories: mensSubcategoryData.menssubcategories
+        type: UPDATE_WOMENSSUBCATEGORIES,
+        womenssubcategories: womensSubcategoryData.womenssubcategories
       });
     }
-  }, [mensSubcategoryData, dispatch]);
+  }, [womensSubcategoryData, dispatch]);
 
     return (
         <main>
 
-            {menssubcategories.map((item) => (
+            {womenssubcategories.map((item) => (
                 <button
                     key={item._id}
                 >
@@ -39,4 +39,4 @@ useEffect(() => {
     );
   };
   
-  export default MensSubcategoryMenu;
+  export default WomensSubcategoryMenu;

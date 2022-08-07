@@ -14,7 +14,7 @@ const ShopWomens = () => {
         <a>Swimwear</a>
         <a>Accessories</a> */}
         < WomensSubcategoryMenu />
-        < SubCategoryMenu />
+
         
       </main>
     );
