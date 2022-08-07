@@ -71,6 +71,7 @@ export const QUERY_ALL_PRODUCTS = gql`
       category {
         name
       }
+      department
     }
   }
 `;
@@ -87,6 +88,7 @@ export const QUERY_PRODUCTS = gql`
       category {
         _id
       }
+      department
     }
   }
 `;

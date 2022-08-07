@@ -1,6 +1,7 @@
 import React from 'react';
 import WomensSubcategoryMenu from '../components/WomensSubcategoryMenu';
 import SubCategoryMenu from '../components/SubCategoryMenu';
+import ProductList from '../components/ProductList';
 
 const ShopWomens = () => {
     return (
@@ -14,6 +15,7 @@ const ShopWomens = () => {
         <a>Swimwear</a>
         <a>Accessories</a> */}
         < WomensSubcategoryMenu />
+        < ProductList />
 
         
       </main>

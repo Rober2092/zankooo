@@ -37,7 +37,7 @@ const resolvers = {
     //   return await Subcategory.find()
     // },
     
-    products: async (parent, { category, name }) => {
+    products: async (parent, { category, name, department }) => {
       const params = {};
 
       if (category) {
@@ -48,6 +48,10 @@ const resolvers = {
         params.name = {
           $regex: name
         };
+      }
+
+      if (department) {
+        params.department = department;
       }
 
       return await Product.find(params).populate('category');

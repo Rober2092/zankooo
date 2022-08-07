@@ -29,20 +29,41 @@ function ProductList() {
 
 console.log(products)
 
+function filterProducts() {
+    if (window.location.pathname === "/shopmens")
+    // if (products) {
+    //   return state.products;
+    // }
+
+    // const stateOfChoice = "womens"
+
+    // console.log(window.location)
+
+    return state.products.filter(
+      (product) => product.department === "mens"
+    );
+
+    if (window.location.pathname === "/shopwomens")
+
+    return state.products.filter(
+        (product) => product.department === "womens"
+    );
+  }
+
     return (
         <div className="my-2">
         <h2>Our Products:</h2>
         {state.products.length ? (
           <div className="flex-row">
-            {products.map((products) => (
+            {filterProducts().map((product) => (
   
               <ProductItem
-                key={products._id}
-                _id={products._id}
-                image={products.image}
-                name={products.name}
-                price={products.price}
-                quantity={products.quantity}
+                key={product._id}
+                _id={product._id}
+                image={product.image}
+                name={product.name}
+                price={product.price}
+                quantity={product.quantity}
               />
               ))}
           </div>
