@@ -25,12 +25,23 @@ useEffect(() => {
     }
   }, [mensSubcategoryData, dispatch]);
 
+  const handleClick = (name) => {
+    // dispatch({
+    //   type: UPDATE_CURRENT_CATEGORY,
+    //   currentCategory: id,
+    // });
+    console.log(name)
+  };
+
     return (
         <main>
 
             {menssubcategories.map((item) => (
                 <button
                     key={item._id}
+                    onClick={() => {
+                        handleClick(item.name);
+                      }}
                 >
                     {item.name}
                 </button>
