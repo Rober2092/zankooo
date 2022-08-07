@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order, Subcategory } = require('../models');
+const { User, Product, Category, Order, Subcategory, MensSubcategory, WomensSubcategory } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -23,6 +23,14 @@ const resolvers = {
       }
 
       return await Subcategory.find(params).populate('category');
+    },
+
+    menssubcategories: async () => {
+      return await MensSubcategory.find();
+    },
+
+    womenssubcategories: async () => {
+      return await WomensSubcategory.find();
     },
 
     // subcategories: async () => {

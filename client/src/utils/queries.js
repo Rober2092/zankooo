@@ -11,12 +11,30 @@ export const QUERY_CATEGORIES = gql`
 
 export const QUERY_SUBCATEGORIES = gql`
   {
-    subcategories (name: "Tops"){
+    subcategories {
       _id
       name
       category {
         name
       }
+    }
+  }
+`;
+
+export const QUERY_MENSSUBCATEGORIES = gql`
+  {
+    menssubcategories {
+      _id
+      name
+    }
+  }
+`;
+
+export const QUERY_WOMENSSUBCATEGORIES = gql`
+  {
+    womenssubcategories {
+      _id
+      name
     }
   }
 `;

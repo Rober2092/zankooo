@@ -6,6 +6,16 @@ const typeDefs = gql`
     name: String
   }
 
+  type MensSubcategory {
+    _id: ID
+    name: String
+  }
+
+  type WomensSubcategory {
+    _id: ID
+    name: String
+  }
+
   type Subcategory {
     _id: ID
     name: String
@@ -44,6 +54,8 @@ const typeDefs = gql`
   type Query {
     categories: [Category]
     subcategories(category: ID, name: String): [Subcategory]
+    menssubcategories: [MensSubcategory]
+    womenssubcategories: [WomensSubcategory]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User

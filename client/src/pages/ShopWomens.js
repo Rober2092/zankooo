@@ -1,4 +1,5 @@
 import React from 'react';
+import WomensSubcategoryMenu from '../components/WomensSubcategoryMenu';
 import SubCategoryMenu from '../components/SubCategoryMenu';
 
 const ShopWomens = () => {
@@ -12,6 +13,7 @@ const ShopWomens = () => {
         <a>Shoes</a>
         <a>Swimwear</a>
         <a>Accessories</a> */}
+        < WomensSubcategoryMenu />
         < SubCategoryMenu />
         
       </main>

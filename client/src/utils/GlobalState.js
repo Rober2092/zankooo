@@ -10,7 +10,9 @@ const StoreProvider = ({ value = [], ...props }) => {
       products: [],
       categories: [],
       currentCategory: '',
-      subcategories: []
+      subcategories: [],
+      menssubcategories: [],
+      womenssubcategories: []
     });
     // use this to confirm it works!
     console.log(state);

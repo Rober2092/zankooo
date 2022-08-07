@@ -28,6 +28,14 @@ useEffect(() => {
     const [currentProductList, setCurrentProductList] = useState()
     return (
         <main>
+
+            {subcategories.map((item) => (
+                <button
+                    key={item._id}
+                >
+                    {item.name}
+                </button>
+            ))}
             <ul>
                 <li>
                     <button onClick={() => setCurrentProductList(<ProductList />)}>Tops</button>

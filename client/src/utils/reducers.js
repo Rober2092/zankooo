@@ -3,7 +3,8 @@ import {
     UPDATE_PRODUCTS,
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY,
-    UPDATE_SUBCATEGORIES
+    UPDATE_SUBCATEGORIES,
+    UPDATE_MENSSUBCATEGORIES
   } from "./actions";
   
   export const reducer = (state, action) => {
@@ -33,6 +34,12 @@ import {
             ...state,
             subcategories: [...action.subcategories]
           };
+
+          case UPDATE_MENSSUBCATEGORIES:
+            return {
+              ...state,
+              menssubcategories: [...action.menssubcategories]
+            };
 
         // if it's none of these actions, do not update state at all and keep things the same!
         default:
