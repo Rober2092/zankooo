@@ -31,6 +31,9 @@ const productSchema = new Schema({
   },
   department: {
     type: String
+  },
+  subcategory: {
+    type: String
   }
 });
 

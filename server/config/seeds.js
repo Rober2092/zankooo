@@ -125,7 +125,8 @@ db.once('open', async () => {
       category: categories[0]._id,
       price: 2.99,
       quantity: 500,
-      department: 'mens'
+      department: 'mens',
+      subcategory: 'tops'
     },
     {
       name: 'Canned Coffee',
@@ -135,7 +136,8 @@ db.once('open', async () => {
       category: categories[0]._id,
       price: 1.99,
       quantity: 500,
-      department: 'mens'
+      department: 'mens',
+      subcategory: 'tops'
     },
     {
       name: 'Toilet Paper',
@@ -145,7 +147,8 @@ db.once('open', async () => {
       image: 'toilet-paper.jpg',
       price: 7.99,
       quantity: 20,
-      department: 'mens'
+      department: 'mens',
+      subcategory: 'tops'
     },
     {
       name: 'Handmade Soap',

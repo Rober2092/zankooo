@@ -45,11 +45,19 @@ function filterProducts() {
       (product) => product.department === "mens"
     );
 
+    if (window.location.pathname === "/shopmens/tops")
+
+    return state.products.filter(
+        (product) => product.department === "mens" && product.subcategory === "tops"
+    );
+
     if (window.location.pathname === "/shopwomens")
 
     return state.products.filter(
         (product) => product.department === "womens"
     );
+
+
   }
 
     return (

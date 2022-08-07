@@ -15,6 +15,7 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import ShopMens from './pages/ShopMens';
+import ShopMensTops from './pages/ShopMensTops';
 import ShopWomens from './pages/ShopWomens';
 import { StoreProvider } from "./utils/GlobalState";
 
@@ -70,6 +71,10 @@ function App() {
                 <Route
                   path="/shopmens"
                   element={<ShopMens />}
+                />
+                 <Route
+                  path="/shopmens/tops"
+                  element={<ShopMensTops />}
                 />
                 <Route
                   path="/shopwomens"

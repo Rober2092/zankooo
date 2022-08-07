@@ -37,7 +37,7 @@ const resolvers = {
     //   return await Subcategory.find()
     // },
     
-    products: async (parent, { category, name, department }) => {
+    products: async (parent, { category, name, department, subcategory }) => {
       const params = {};
 
       if (category) {
@@ -52,6 +52,10 @@ const resolvers = {
 
       if (department) {
         params.department = department;
+      }
+
+      if (subcategory) {
+        params.subcategory = subcategory;
       }
 
       return await Product.find(params).populate('category');

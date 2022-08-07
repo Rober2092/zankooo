@@ -72,6 +72,7 @@ export const QUERY_ALL_PRODUCTS = gql`
         name
       }
       department
+      subcategory
     }
   }
 `;
@@ -89,6 +90,7 @@ export const QUERY_PRODUCTS = gql`
         _id
       }
       department
+      subcategory
     }
   }
 `;
