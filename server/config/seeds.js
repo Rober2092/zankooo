@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Subcategory } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -13,6 +13,57 @@ db.once('open', async () => {
   ]);
 
   console.log('categories seeded');
+
+  await Subcategory.deleteMany();
+
+  const subcategories = await Subcategory.insertMany([
+    {
+      name: 'Tops',
+      category: categories[0]._id,
+    },
+    {
+      name: 'Bottoms',
+      category: categories[0]._id,
+    },
+    {
+      name: 'Shoes',
+      category: categories[0]._id,
+    },
+    {
+      name: "Accessories",
+      category: categories[0]._id,
+    },
+    {
+      name: 'Tops',
+      category: categories[1]._id,
+    },
+
+    {
+      name: 'Dresses',
+      category: categories[1]._id,
+    },
+
+    {
+      name: 'Pants',
+      category: categories[1]._id,
+    },
+    {
+      name: 'Skirts',
+      category: categories[1]._id,
+    },
+    {
+      name: 'Shoes',
+      category: categories[1]._id,
+    },
+    {
+      name: 'Swimwear',
+      category: categories[1]._id,
+    },
+    {
+      name: 'Accessories',
+      category: categories[1]._id,
+    },
+  ]);
 
   await Product.deleteMany();
 

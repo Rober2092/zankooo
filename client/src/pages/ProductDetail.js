@@ -47,15 +47,15 @@ function ProductDetail() {
 
         <Wrapper>
 
-            {products.map((products) => (
+            
 
                 <ProductDetailInfo
-                    name={products.name}
-                    key={products.id}
-                    image={products.image}
-                    price={products.price}
+                    name={products[0].name}
+                    key={products[0].id}
+                    image={products[0].image}
+                    price={products[0].price}
                 />
-            ))}
+            
         </Wrapper>
     )
 };

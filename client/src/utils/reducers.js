@@ -2,7 +2,8 @@ import { useReducer } from 'react';
 import {
     UPDATE_PRODUCTS,
     UPDATE_CATEGORIES,
-    UPDATE_CURRENT_CATEGORY
+    UPDATE_CURRENT_CATEGORY,
+    UPDATE_SUBCATEGORIES
   } from "./actions";
   
   export const reducer = (state, action) => {
@@ -26,6 +27,12 @@ import {
                 ...state,
                 currentCategory: action.currentCategory
             };
+
+        case UPDATE_SUBCATEGORIES:
+          return {
+            ...state,
+            subcategories: [...action.subcategories]
+          };
 
         // if it's none of these actions, do not update state at all and keep things the same!
         default:

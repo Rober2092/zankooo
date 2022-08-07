@@ -9,6 +9,18 @@ export const QUERY_CATEGORIES = gql`
   }
 `;
 
+export const QUERY_SUBCATEGORIES = gql`
+  {
+    subcategories (name: "Tops"){
+      _id
+      name
+      category {
+        name
+      }
+    }
+  }
+`;
+
 export const QUERY_USER = gql`
   {
     user {
