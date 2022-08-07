@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 import {
     UPDATE_PRODUCTS,
+    UPDATE_ALL_PRODUCTS,
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY,
     UPDATE_SUBCATEGORIES,
@@ -47,6 +48,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         womenssubcategories: [...action.womenssubcategories]
+      };
+
+    case UPDATE_ALL_PRODUCTS:
+      return {
+        ...state,
+        products: [...action.products],
       };
 
     // if it's none of these actions, do not update state at all and keep things the same!
