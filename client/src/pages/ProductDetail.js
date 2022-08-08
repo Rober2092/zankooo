@@ -4,6 +4,7 @@ import products from '../products.json'
 import ProductItem from '../components/ProductItem';
 
 function ProductDetailInfo(props) {
+    
     console.log(props)
 
     return (

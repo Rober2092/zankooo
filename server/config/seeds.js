@@ -158,7 +158,8 @@ db.once('open', async () => {
       image: 'soap.jpg',
       price: 3.99,
       quantity: 50,
-      department: 'mens'
+      department: 'mens',
+      subcategory: 'pants'
     },
     {
       name: 'Set of Wooden Spoons',
@@ -168,7 +169,8 @@ db.once('open', async () => {
       image: 'wooden-spoons.jpg',
       price: 14.99,
       quantity: 100,
-      department: 'mens'
+      department: 'mens',
+      subcategory: 'pants'
     },
     {
       name: 'Camera',
@@ -178,7 +180,8 @@ db.once('open', async () => {
       image: 'camera.jpg',
       price: 399.99,
       quantity: 30,
-      department: 'womens'
+      department: 'mens',
+      subcategory: 'shoes'
     },
     {
       name: 'Tablet',
@@ -188,7 +191,8 @@ db.once('open', async () => {
       image: 'tablet.jpg',
       price: 199.99,
       quantity: 30,
-      department: 'womens'
+      department: 'mens',
+      subcategory: 'accessories'
     },
     {
       name: 'Tales at Bedtime',
@@ -198,7 +202,8 @@ db.once('open', async () => {
       image: 'bedtime-book.jpg',
       price: 9.99,
       quantity: 100,
-      department: 'womens'
+      department: 'womens',
+      subcategory: 'tops'
     },
     {
       name: 'Spinning Top',
@@ -207,7 +212,8 @@ db.once('open', async () => {
       image: 'spinning-top.jpg',
       price: 1.99,
       quantity: 1000,
-      department: 'womens'
+      department: 'womens',
+      subcategory: 'dresses'
     },
     {
       name: 'Set of Plastic Horses',
@@ -217,7 +223,8 @@ db.once('open', async () => {
       image: 'plastic-horses.jpg',
       price: 2.99,
       quantity: 1000,
-      department: 'womens'
+      department: 'womens',
+      subcategory: 'pants'
     },
     {
       name: 'Teddy Bear',
@@ -227,7 +234,8 @@ db.once('open', async () => {
       image: 'teddy-bear.jpg',
       price: 7.99,
       quantity: 100,
-      department: 'womens'
+      department: 'womens',
+      subcategory: 'skirts'
     },
     {
       name: 'Alphabet Blocks',
@@ -237,7 +245,30 @@ db.once('open', async () => {
       image: 'alphabet-blocks.jpg',
       price: 9.99,
       quantity: 600,
-      department: 'womens'
+      department: 'womens',
+      subcategory: 'shoes'
+    },
+    {
+      name: 'One Piece Tan/Black',
+      category: categories[4]._id,
+      description:
+        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+      image: 'https://cdn11.bigcommerce.com/s-8eosbn3nrb/images/stencil/650x650/products/1966/8779/USW921092_NATURAL_01__29720.1.jpg',
+      price: 49.99,
+      quantity: 600,
+      department: 'womens',
+      subcategory: 'swimwear'
+    },
+    {
+      name: 'One Piece Tan/Black',
+      category: categories[4]._id,
+      description:
+        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+      image: 'https://cdn.shopify.com/s/files/1/0029/7900/4480/products/LSP1902028_2_AIR_HEART_9de19ccb-6ad7-4b35-beea-2b1ff4313168_1600x.jpg?v=1649296731',
+      price: 69.99,
+      quantity: 600,
+      department: 'womens',
+      subcategory: 'accessories'
     }
   ]);
 

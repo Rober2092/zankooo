@@ -16,8 +16,18 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import ShopMens from './pages/ShopMens';
 import ShopMensTops from './pages/ShopMensTops';
+import ShopMensPants from './pages/ShopMensPants';
 import ShopWomens from './pages/ShopWomens';
 import { StoreProvider } from "./utils/GlobalState";
+import ShopMensShoes from './pages/ShopMensShoes';
+import ShopMensAccessories from './pages/ShopMensAccessories';
+import ShopWomensTops from './pages/ShopWomensTops';
+import ShopWomensDresses from './pages/ShopWomensDresses';
+import ShopWomensPants from './pages/ShopWomensPants';
+import ShopWomensSkirts from './pages/ShopWomensSkirts';
+import ShopWomensSwimwear from './pages/ShopWomensSwimwear';
+import ShopWomensAccessories from './pages/ShopWomensAccessories';
+import ShopWomensShoes from './pages/ShopWomensShoes';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -76,10 +86,52 @@ function App() {
                   path="/shopmens/tops"
                   element={<ShopMensTops />}
                 />
+                  <Route
+                    path="/shopmens/pants"
+                    element={<ShopMensPants />}
+                  />
+                  <Route
+                    path="/shopmens/shoes"
+                    element={<ShopMensShoes />}
+                  />
+                  <Route
+                    path="/shopmens/accessories"
+                    element={<ShopMensAccessories />}
+                  />
                 <Route
                   path="/shopwomens"
                   element={<ShopWomens />}
                 />
+                <Route
+                  path="/shopwomens/tops"
+                  element={<ShopWomensTops />}
+                />
+                  <Route
+                    path="/shopwomens/dresses"
+                    element={<ShopWomensDresses />}
+                  />
+                  <Route
+                    path="/shopwomens/pants"
+                    element={<ShopWomensPants />}
+                  />
+                  <Route
+                    path="/shopwomens/skirts"
+                    element={<ShopWomensSkirts />}
+                  />
+                  <Route
+                    path="/shopwomens/shoes"
+                    element={<ShopWomensShoes />}
+                  />
+                  <Route
+                    path="/shopwomens/swimwear"
+                    element={<ShopWomensSwimwear />}
+                  />
+
+                  <Route
+                    path="/shopwomens/accessories"
+                    element={<ShopWomensAccessories />}
+                  />
+                
                 <Route
                   path="/products/:name"
                   element={<ProductDetail />}

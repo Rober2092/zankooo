@@ -51,10 +51,70 @@ function filterProducts() {
         (product) => product.department === "mens" && product.subcategory === "tops"
     );
 
+    if (window.location.pathname === "/shopmens/pants")
+
+    return state.products.filter(
+        (product) => product.department === "mens" && product.subcategory === "pants"
+    );
+
+    if (window.location.pathname === "/shopmens/shoes")
+
+    return state.products.filter(
+        (product) => product.department === "mens" && product.subcategory === "shoes"
+    );
+
+    if (window.location.pathname === "/shopmens/accessories")
+
+    return state.products.filter(
+        (product) => product.department === "mens" && product.subcategory === "accessories"
+    );
+
     if (window.location.pathname === "/shopwomens")
 
     return state.products.filter(
         (product) => product.department === "womens"
+    );
+
+    if (window.location.pathname === "/shopwomens/tops")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "tops"
+    );
+
+    if (window.location.pathname === "/shopwomens/dresses")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "dresses"
+    );
+
+    if (window.location.pathname === "/shopwomens/pants")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "pants"
+    );
+
+    if (window.location.pathname === "/shopwomens/skirts")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "skirts"
+    );
+
+    if (window.location.pathname === "/shopwomens/shoes")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "shoes"
+    );
+
+    if (window.location.pathname === "/shopwomens/swimwear")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "swimwear"
+    );
+
+    if (window.location.pathname === "/shopwomens/accessories")
+
+    return state.products.filter(
+        (product) => product.department === "womens" && product.subcategory === "accessories"
     );
 
 

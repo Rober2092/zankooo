@@ -52,13 +52,19 @@ function MensSubcategoryMenu() {
             </Link>
           </li>
           <li>
-            <button>Bottoms</button>
+          <Link to="/shopmens/pants">
+              Pants
+            </Link>
           </li>
           <li>
-            <button>Shoes</button>
+          <Link to="/shopmens/shoes">
+              Shoes
+            </Link>
           </li>
           <li>
-            <button>Accessories</button>
+          <Link to="/shopmens/accessories">
+              Accessories
+            </Link>
           </li>
         </ul>
         </main>
