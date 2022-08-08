@@ -17,6 +17,7 @@ import ProductDetail from './pages/ProductDetail';
 import ShopMens from './pages/ShopMens';
 import ShopWomens from './pages/ShopWomens';
 import { StoreProvider } from "./utils/GlobalState";
+import Success from './pages/Success';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,51 +41,55 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div>
       <div>
-        <Router>
-          <div>
-            <StoreProvider>
-              <Nav />
-            <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
-              <Route 
-                path="/orderHistory" 
-                element={<OrderHistory />} 
-              />
-                <Route
-                  path="/"
-                  element={<Home />}
-                />
-                <Route
-                  path="/shopmens"
-                  element={<ShopMens />}
-                />
-                <Route
-                  path="/shopwomens"
-                  element={<ShopWomens />}
-                />
-                <Route
-                  path="/product/:id"
-                  element={<ProductDetail />}
-                />
-              </Routes>
-            </StoreProvider>
-          </div>
-        </Router>
+        <div>
+          <Router>
+            <div>
+              <StoreProvider>
+                <Nav />
+                <Routes>
+                  <Route
+                    path="/"
+                    element={<Home />}
+                  />
+                  <Route
+                    path="/login"
+                    element={<Login />}
+                  />
+                  <Route
+                    path="/signup"
+                    element={<Signup />}
+                  />
+                  <Route
+                    path="/success"
+                    element={<Success />}
+                  />
+                  <Route
+                    path="/orderHistory"
+                    element={<OrderHistory />}
+                  />
+                  <Route
+                    path="/"
+                    element={<Home />}
+                  />
+                  <Route
+                    path="/shopmens"
+                    element={<ShopMens />}
+                  />
+                  <Route
+                    path="/shopwomens"
+                    element={<ShopWomens />}
+                  />
+                  <Route
+                    path="/product/:id"
+                    element={<ProductDetail />}
+                  />
+                </Routes>
+              </StoreProvider>
+            </div>
+          </Router>
+        </div>
       </div>
-    </div>
     </ApolloProvider>
   );
 }
