@@ -17,7 +17,7 @@ function ProductItem(item) {
   } = item;
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="mx-3 my-3" style={{ width: '18rem' }}>
       <Link to={`/${_id}`}>
         <Card.Img className='' alt={name} src={image} />
       </Link>

@@ -30,6 +30,7 @@ import ShopWomensAccessories from './pages/ShopWomensAccessories';
 import ShopWomensShoes from './pages/ShopWomensShoes';
 import ProductDetailInfo from './pages/ProductDetail';
 
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });

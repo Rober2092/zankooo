@@ -46,32 +46,30 @@ function ProductDetailInfo() {
 
     return (
         <>
+        
             <div className="container my-1">
+
                 <Link to="/">← Back to Products</Link>
                 {filterProducts().map((product) => (
-                <div key={product._id}>
-                    
-                <h2>{product.name}</h2>
 
-                <p>{product.description}</p>
 
-                <p>
-                    <strong>Price:</strong>${product.price}{' '}
-                    <button >Add to cart</button>
-                    <button
-                    //   disabled={!cart.find(p => p._id === currentItem._id)}
-                    //   onClick={removeFromCart}
-                    >
-                        Remove from Cart
-                    </button>
-                </p>
-                
-                <img
-                    src={product.image}
-                    alt={product.name}
-                />
 
-                </div> 
+
+                    <div key={product._id} className="card mx-auto col-md-5 col-10 mt-5 pt-4">
+                        <div className="d-flex sale ">
+                            <div className="btn">Add To Shopping Bag</div>
+                            <div className="btn">Remove From Shopping Bag</div>
+                        </div>
+                        <img className='mx-auto img-thumbnail'
+                            src={product.image}
+                            width="auto" height="auto" />
+                        <div className="card-body text-center mx-auto">
+                            <h5 className="card-title">{product.name}</h5>
+                            <p className="card-text">${product.price}</p>
+                        </div>
+                        <p className='mx-3'>{product.description}</p>
+                    </div>
+
                 ))}
             </div>
             
