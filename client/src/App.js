@@ -28,6 +28,7 @@ import ShopWomensSkirts from './pages/ShopWomensSkirts';
 import ShopWomensSwimwear from './pages/ShopWomensSwimwear';
 import ShopWomensAccessories from './pages/ShopWomensAccessories';
 import ShopWomensShoes from './pages/ShopWomensShoes';
+import ProductDetailInfo from './pages/ProductDetail';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -133,8 +134,8 @@ function App() {
                   />
                 
                 <Route
-                  path="/products/:name"
-                  element={<ProductDetail />}
+                  path="/:id"
+                  element={<ProductDetailInfo />}
                 />
               </Routes>
             </StoreProvider>

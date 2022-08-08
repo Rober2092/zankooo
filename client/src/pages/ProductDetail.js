@@ -1,23 +1,62 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import products from '../products.json'
+// import products from '../products.json'
 import ProductItem from '../components/ProductItem';
+import { useStoreContext } from '../utils/GlobalState';
+import { UPDATE_PRODUCTS } from '../utils/actions';
+import { useQuery } from '@apollo/client';
+import { QUERY_PRODUCTS } from '../utils/queries';
 
-function ProductDetailInfo(props) {
+
+
+function ProductDetailInfo() {
+
+    const [state, dispatch] = useStoreContext();
+
+    const { products } = state;
+  
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
+  
+    useEffect(() => {
+      if (data) {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: data.products,
+        });
+    }
+}, [data, loading, dispatch]);
     
-    console.log(props)
+    console.log(products)
+
+    function filterProducts() {
+
+        const pathname = window.location.pathname
+        console.log(pathname)
+        const paths = pathname.split('/')
+        console.log(paths)
+        const detailID = paths[1]
+        console.log(detailID)
+
+        return state.products.filter(
+            (product) => product._id == detailID
+          );
+    }
+
+    console.log(filterProducts)
 
     return (
         <>
             <div className="container my-1">
                 <Link to="/">← Back to Products</Link>
+                {filterProducts().map((product) => (
+                <div key={product._id}>
+                    
+                <h2>{product.name}</h2>
 
-                <h2>{props.name}</h2>
-
-                <p>{props.description}</p>
+                <p>{product.description}</p>
 
                 <p>
-                    <strong>Price:</strong>${props.price}{' '}
+                    <strong>Price:</strong>${product.price}{' '}
                     <button >Add to cart</button>
                     <button
                     //   disabled={!cart.find(p => p._id === currentItem._id)}
@@ -28,38 +67,42 @@ function ProductDetailInfo(props) {
                 </p>
                 
                 <img
-                    src={props.image}
-                    alt={props.name}
+                    src={product.image}
+                    alt={product.name}
                 />
+
+                </div> 
+                ))}
             </div>
+            
         </>
     );
 
 
 }
 
-function Wrapper(props) {
-    return <div>{props.children}</div>;
-}
+// function Wrapper(products) {
+//     return <div>{products.children}</div>;
+// }
 
-function ProductDetail() {
+// function ProductDetail() {
 
-    return (
+//     return (
 
-        <Wrapper>
+//         <Wrapper>
 
             
 
-                <ProductDetailInfo
-                    name={products[0].name}
-                    key={products[0].id}
-                    image={products[0].image}
-                    price={products[0].price}
-                />
+//                 <ProductDetailInfo
+//                     // name={product.name}
+//                     // key={product.id}
+//                     // image={product.image}
+//                     // price={product.price}
+//                 />
             
-        </Wrapper>
-    )
-};
+//         </Wrapper>
+//     )
+// };
 
 
 
@@ -69,4 +112,4 @@ function ProductDetail() {
 
 
 
-export default ProductDetail;
+export default ProductDetailInfo;
