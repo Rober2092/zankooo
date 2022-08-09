@@ -17,7 +17,7 @@ const Cart = () => {
             <div className="cart-closed" onClick={toggleCart}>
                 <span
                     role="img"
-                    aria-label="trash">🛒</span>
+                    aria-label="trash"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/1A1A1A/external-shopping-bag-black-friday-flaticons-flat-flat-icons-6.png"/></span>
             </div>
         );
     }

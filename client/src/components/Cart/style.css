@@ -42,6 +42,7 @@
     padding: .25rem;
     width: 50px;
     height: 50px;
+    margin-right: 70px;
   }
   
   .cart-closed:hover {

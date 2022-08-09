@@ -39,3 +39,26 @@ code {
 .container {
 display: flex;
 }
+
+.login {
+ color: black;
+}
+
+nav {
+  padding-left: 800px;
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+li {
+    list-style-type: none;
+    padding: 20px;
+    padding-top: 32px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+

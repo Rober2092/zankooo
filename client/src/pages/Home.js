@@ -16,7 +16,7 @@ function ProjectCard() {
       <Card className="card bg-dark text-white landing-card">
       <Link to="/shopmens">
             
-        <img className="card-img" src="/images/PopArtMan.jpg" alt="Card image" />
+        <img className="card-img" src="/images/BlackRedFashionMan.jpg" alt="Card image" />
         
         <div className="card-img-overlay">
           <h5 className="card-title">Shop Mens</h5>
@@ -28,7 +28,7 @@ function ProjectCard() {
 
       <Card className="card bg-dark text-white landing-card">
       <Link to="/shopwomens">
-        <img className="card-img" src="/images/PopArtWoman.jpg" alt="Card image" />
+        <img className="card-img" src="/images/BlackRedFashionWoman.jpg" alt="Card image" />
         <div className="card-img-overlay">
           <h5 className="card-title">Shop Womens</h5>
           <p className="card-text"></p>
