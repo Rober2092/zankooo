@@ -29,3 +29,13 @@ code {
   display: flex;
   flex-wrap: wrap;
 }
+
+.landing-card {
+  width: 400px;
+  /* height: 413px !important; */
+  margin: 10px
+}
+
+.container {
+display: flex;
+}
