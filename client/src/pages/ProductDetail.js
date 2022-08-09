@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom";
-// import products from '../products.json'
-import ProductItem from '../components/ProductItem';
 import { useStoreContext } from '../utils/GlobalState';
-// import { UPDATE_PRODUCTS } from '../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import Cart from '../components/Cart';
@@ -24,6 +21,7 @@ function ProductDetailInfo() {
     const { products, cart } = state;
 
     const [currentProduct, setCurrentProduct] = useState({});
+    console.log(currentProduct)
   
     const { loading, data } = useQuery(QUERY_PRODUCTS);
   
@@ -86,10 +84,10 @@ function ProductDetailInfo() {
 
     return (
         <>
-        
+
             <div className="container my-1">
 
-                <Link to="/">← Back to Products</Link>
+            <Link to={`/shop${currentProduct.department}/${currentProduct.subcategory}`}>← Back to Products</Link>
                 {filterProducts().map((product) => (
 
 
@@ -98,8 +96,8 @@ function ProductDetailInfo() {
                     <div key={product._id} className="card mx-auto col-md-5 col-10 mt-5 pt-4">
                         <div className="d-flex sale ">
                             <div className="btn" onClick={addToCart}>Add To Shopping Bag</div>
-                            <button className="btn" disabled={!cart.find(p => p._id === currentProduct._id)} 
-  onClick={removeFromCart}>Remove From Shopping Bag</button>
+                            <button className="btn" disabled={!cart.find(p => p._id === currentProduct._id)}
+                                onClick={removeFromCart}>Remove From Shopping Bag</button>
                         </div>
                         <img className='mx-auto img-thumbnail'
                             src={product.image}
