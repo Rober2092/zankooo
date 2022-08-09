@@ -1,28 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import products from '../products.json'
 import ProductItem from '../components/ProductItem';
 import { useStoreContext } from '../utils/GlobalState';
-import { UPDATE_PRODUCTS } from '../utils/actions';
+// import { UPDATE_PRODUCTS } from '../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
+import Cart from '../components/Cart';
+import {
+    REMOVE_FROM_CART,
+    UPDATE_CART_QUANTITY,
+    ADD_TO_CART,
+    UPDATE_PRODUCTS,
+  } from '../utils/actions';
 
 
 
 function ProductDetailInfo() {
 
     const [state, dispatch] = useStoreContext();
+    const { id } = useParams();
 
-    const { products } = state;
+    const { products, cart } = state;
+
+    const [currentProduct, setCurrentProduct] = useState({});
   
     const { loading, data } = useQuery(QUERY_PRODUCTS);
   
     useEffect(() => {
-      if (data) {
+            // already in global store
+    if (products.length) {
+        setCurrentProduct(products.find((product) => product._id === id));
+      }
+      // retrieved from server
+      else if (data) {
         dispatch({
           type: UPDATE_PRODUCTS,
           products: data.products,
         });
+    
     }
 }, [data, loading, dispatch]);
     
@@ -44,6 +60,30 @@ function ProductDetailInfo() {
 
     console.log(filterProducts)
 
+    const addToCart = () => {
+        const itemInCart = cart.find((cartItem) => cartItem._id === id);
+      
+        if (itemInCart) {
+          dispatch({
+            type: UPDATE_CART_QUANTITY,
+            _id: id,
+            purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+          });
+        } else {
+          dispatch({
+            type: ADD_TO_CART,
+            product: { ...currentProduct, purchaseQuantity: 1 }
+          });
+        }
+      };
+
+    const removeFromCart = () => {
+        dispatch({
+            type: REMOVE_FROM_CART,
+            _id: currentProduct._id
+        });
+    };
+
     return (
         <>
         
@@ -57,8 +97,9 @@ function ProductDetailInfo() {
 
                     <div key={product._id} className="card mx-auto col-md-5 col-10 mt-5 pt-4">
                         <div className="d-flex sale ">
-                            <div className="btn">Add To Shopping Bag</div>
-                            <div className="btn">Remove From Shopping Bag</div>
+                            <div className="btn" onClick={addToCart}>Add To Shopping Bag</div>
+                            <button className="btn" disabled={!cart.find(p => p._id === currentProduct._id)} 
+  onClick={removeFromCart}>Remove From Shopping Bag</button>
                         </div>
                         <img className='mx-auto img-thumbnail'
                             src={product.image}
@@ -72,7 +113,7 @@ function ProductDetailInfo() {
 
                 ))}
             </div>
-            
+            <Cart />
         </>
     );
 

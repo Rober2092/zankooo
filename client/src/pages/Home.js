@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Cart from '../components/Cart';
 
 
 // 
@@ -47,7 +48,7 @@ function ProjectCard() {
 const Home = () => {
   return (
     <main>
-      
+        <Cart />
         <ProjectCard />
 
 
