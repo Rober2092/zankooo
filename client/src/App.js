@@ -29,6 +29,7 @@ import ShopWomensSwimwear from './pages/ShopWomensSwimwear';
 import ShopWomensAccessories from './pages/ShopWomensAccessories';
 import ShopWomensShoes from './pages/ShopWomensShoes';
 import ProductDetailInfo from './pages/ProductDetail';
+import Success from './pages/Success';
 
 
 const httpLink = createHttpLink({
@@ -137,6 +138,10 @@ function App() {
                 <Route
                   path="/:id"
                   element={<ProductDetailInfo />}
+                />
+                <Route
+                  path="/success"
+                  element={<Success />}
                 />
               </Routes>
             </StoreProvider>
