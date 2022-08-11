@@ -37,7 +37,7 @@ function WomensSubcategoryMenu() {
                 </button>
             ))}
         </main> */}
-                <ul>
+                <ul className='subcats'>
                 <li>
                  <Link to="/shopwomens/tops">
                     Tops

@@ -132,3 +132,13 @@ button {
 .landing-card:hover .card-text{
   color: red;
 }
+
+.subcats {
+  display: flex;
+
+
+}
+
+.subcats li {
+  font-size: 30px;
+}
