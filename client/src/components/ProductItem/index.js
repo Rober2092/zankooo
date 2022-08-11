@@ -17,13 +17,13 @@ function ProductItem(item) {
   } = item;
 
   return (
-    <Card className="mx-3 my-3" style={{ width: '18rem' }}>
+    <Card className="product-card" style={{ width: '18rem' }}>
       <Link to={`/${_id}`}>
         <Card.Img className='' alt={name} src={image} />
       </Link>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Card.Text>
+        <Card.Text style={{ color: 'black' }}>
           {price}
         </Card.Text>
       </Card.Body>

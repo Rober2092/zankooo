@@ -11,7 +11,7 @@ import CategoryMenu from '../components/CategoryMenu';
 
 function ProjectCard() {
   return (
-    <Container className='container justify-content-center mt-5'>
+    <Container className='container justify-content-center mt-5 card-container'>
       
       <Card className="card bg-dark text-white landing-card">
       <Link to="/shopmens">
@@ -19,7 +19,7 @@ function ProjectCard() {
         <img className="card-img" src="/images/BlackRedFashionMan.jpg" alt="Card image" />
         
         <div className="card-img-overlay">
-          <h5 className="card-title">Shop Mens</h5>
+          <h5 className="card-title card-text">Shop Mens</h5>
           <p className="card-text"></p>
           <p className="card-text"></p>
         </div>
@@ -30,7 +30,7 @@ function ProjectCard() {
       <Link to="/shopwomens">
         <img className="card-img" src="/images/BlackRedFashionWoman.jpg" alt="Card image" />
         <div className="card-img-overlay">
-          <h5 className="card-title">Shop Womens</h5>
+          <h5 className="card-title card-text">Shop Womens</h5>
           <p className="card-text"></p>
           <p className="card-text"></p>
         </div>
