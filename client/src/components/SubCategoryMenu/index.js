@@ -5,7 +5,7 @@ function SubCategoryMenu() {
 
     const [currentProductList, setCurrentProductList] = useState()
     return (
-        <main>
+        <main className='subcats'>
             <ul>
                 <li>
                     <button onClick={() => setCurrentProductList(<ProductList />)}>Tops</button>

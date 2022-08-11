@@ -45,7 +45,7 @@ function MensSubcategoryMenu() {
                 </button>
             ))} */}
 
-        <ul>
+        <ul className='subcats'>
           <li>
            <Link to="/shopmens/tops">
               Tops

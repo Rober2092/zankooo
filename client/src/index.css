@@ -15,15 +15,16 @@ code {
 .btn {
   border-radius: 0;
   width: fit-content;
-  background-color: #69F0AE !important;
+  background-color: black !important;
   box-shadow: 0px 10px 10px #E0E0E0 !important;
   z-index: 1;
-  color: white;
+  color: white !important;
   /* width: 100px; */
   font-size: 14px;
-  font-weight: 900;
+  font-weight: bold !important;
   margin: 10px;
 }
+
 
 .flex-row {
   display: flex;
@@ -33,10 +34,11 @@ code {
 .landing-card {
   width: 400px;
   /* height: 413px !important; */
-  margin: 10px
+  margin: 20px;
+  margin-bottom: 100px;
 }
 
-.container {
+.card-container {
 display: flex;
 }
 
@@ -61,4 +63,82 @@ li {
     font-family: sans-serif;
 }
 
+form {
+  padding-left: 300px;
+  margin-bottom: 300px;
+  margin-top: -70px;
+}
 
+label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 150px;
+  font-weight: bold;
+}
+
+input {
+  display: inline-block;
+  float: left;
+  border: 1px solid var(--dark);
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 3px 0px black, 0 3px 6px black;
+}
+
+button {
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px !important;
+  box-shadow: 0 3px 0px black, 0 3px 6px black;
+  font-weight: bold;
+}
+
+.product-card {
+  /* margin-left: auto !important;
+  margin-right: auto !important; */
+  margin: 50px !important;
+  border: 1px solid var(--dark);
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 3px 0px black, 0 3px 6px black;
+}
+
+.detail-card {
+  border: 1px solid var(--dark);
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 3px 0px black, 0 3px 6px black;
+}
+
+.products {
+  flex-direction: row!important;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.card-text {
+  color:aliceblue;
+  font-size: 25px;
+}
+
+.landing-card:hover .card-text{
+  color: red;
+}
+
+.subcats {
+  display: flex;
+
+
+}
+
+.subcats li {
+  font-size: 30px;
+}
